@@ -41,16 +41,7 @@ export function SpaInfoSection() {
 
               <div className="flex items-center justify-between mt-auto">
                 <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="relative w-8 h-8 rounded-full border-2 border-[#F3ECD9] overflow-hidden">
-                      <Image
-                        src={`https://i.pravatar.cc/100?img=${i + 10}`}
-                        alt="User"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
+                  
                 </div>
                 <div className="flex items-center gap-2 cursor-pointer group/testimonial">
                   <span className="text-xs font-bold text-[#2C241B] uppercase tracking-wide group-hover/testimonial:underline underline-offset-4">Read Testimonials</span>

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export function AboutSection() {
   return (
@@ -16,14 +19,21 @@ export function AboutSection() {
           {/* Row 2: Image - MEETS - Image */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 relative z-10 my-4 md:my-0">
             {/* Left Image */}
-            <div className="w-full md:w-[25%] aspect-[16/9] relative rounded-2xl overflow-hidden shadow-lg">
+            {/* Left Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-[70%] md:w-[25%] aspect-[16/9] relative rounded-2xl overflow-hidden shadow-lg"
+            >
               <Image
                 src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070"
                 alt="Spa towels and flowers"
                 fill
                 className="object-cover"
               />
-            </div>
+            </motion.div>
 
             {/* Center Text */}
             <div className="text-center flex-1">
@@ -33,14 +43,20 @@ export function AboutSection() {
             </div>
 
             {/* Right Image (Tilted) */}
-            <div className="w-full md:w-[20%] aspect-square relative transform rotate-6 transition-transform duration-500 rounded-xl overflow-hidden shadow-lg border-4 border-white">
+            <motion.div
+              initial={{ opacity: 0, y: 50, rotate: 6 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 6 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="w-[60%] md:w-[20%] aspect-square relative transform transition-transform duration-500 rounded-xl overflow-hidden shadow-lg border-4 border-white"
+            >
               <Image
                 src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070"
                 alt="Essential oils"
                 fill
                 className="object-cover"
               />
-            </div>
+            </motion.div>
           </div>
 
           {/* Row 3: NATURE - Content */}
