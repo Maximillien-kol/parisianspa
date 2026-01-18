@@ -66,14 +66,14 @@ export function Footer() {
               2026 Persian Beauty Spa. All Rights Reserved.
             </p>
             <p className="text-primary-foreground/60 text-xs">
-              Website designed with care
+              
             </p>
           </div>
         </div>
       </div>
 
       {/* Large Brand Text */}
-      <div className="overflow-hidden py-8">
+      <div className="overflow-hidden">
         <p className="font-serif text-2xl md:text-6xl lg:text-9xl text-primary-foreground/10 text-center tracking-widest whitespace-nowrap">
           PARISIAN BEAUTY SPA
         </p>

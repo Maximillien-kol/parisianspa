@@ -8,18 +8,26 @@ import { Menu, X } from "lucide-react";
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50);
+
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      setIsHidden(windowHeight + scrollY >= documentHeight - 100);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/85 py-4 shadow-sm" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isHidden ? "-translate-y-full" : "translate-y-0"
+        } ${isScrolled ? "bg-white/85 py-4 shadow-sm" : "bg-transparent py-6"
         }`}
     >
       <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
