@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer id="contact" className="bg-primary text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+      <div className="max-w-[1600px] mx-auto px-4 lg:px-8 py-16 lg:py-20">
         <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
           {/* Connect With Us */}
           <div>
@@ -52,9 +52,7 @@ export function Footer() {
               className="inline-flex items-center gap-3 px-6 py-3 border border-primary-foreground text-primary-foreground text-xs tracking-widest uppercase hover:bg-primary-foreground hover:text-primary transition-colors"
             >
               BOOK AN APPOINTMENT
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+
             </Link>
           </div>
         </div>
@@ -62,7 +60,7 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
+        <div className="max-w-[1600px] mx-auto px-4 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-xs">
               2026 Persian Beauty Spa. All Rights Reserved.
@@ -76,7 +74,7 @@ export function Footer() {
 
       {/* Large Brand Text */}
       <div className="overflow-hidden py-8">
-        <p className="font-serif text-2xl md:text-6xl lg:text-8xl text-primary-foreground/10 text-center tracking-widest whitespace-nowrap">
+        <p className="font-serif text-2xl md:text-6xl lg:text-9xl text-primary-foreground/10 text-center tracking-widest whitespace-nowrap">
           PARISIAN BEAUTY SPA
         </p>
       </div>
