@@ -25,14 +25,14 @@ export function HeroSection() {
           {/* Middle Row: Welcome Text & Happy Client */}
           <div className="flex flex-col md:flex-row items-end justify-between w-full mb-8 pointer-events-auto">
             {/* Left: Welcome Text */}
-            <div className="max-w-md space-y-2 text-white/90 text-[11px] md:text-xs font-medium tracking-[0.2em] leading-relaxed uppercase" style={{ fontFamily: "var(--font-sans)" }}>
+            <div className="max-w-lg space-y-2 text-white/80 text-[15px] md:text-md font-medium tracking-[0.2em] leading-relaxed uppercase" style={{ fontFamily: "var(--font-sans)" }}>
               <p>Welcome to your personal escape</p>
               <p>A serene space for deep rest and renewal.</p>
               <p>Your weekly ritual to unwind the body and calm the mind.</p>
             </div>
           </div>
 
-          {/* Massive Typography */}
+          {/* Massive Typography 
           <div className="w-full pointer-events-auto">
             <h1
               className="text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-[9vw] leading-[0.85] sm:leading-[0.8] font-serif text-white whitespace-nowrap opacity-90 text-left -ml-[0.09em]"
@@ -40,7 +40,7 @@ export function HeroSection() {
             >
               GOLDEN MOMENTS.
             </h1>
-          </div>
+          </div> */}
 
         </div>
       </div>
