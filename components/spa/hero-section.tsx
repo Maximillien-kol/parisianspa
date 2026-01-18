@@ -1,11 +1,40 @@
 "use client";
 
 import Image from "next/image";
-import { Play } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1 },
+    },
+  };
+
+  const marqueeVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, delay: 1.2 },
+    },
+  };
+
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#1a1512]">
+    <section className="relative h-screen w-full bg-[#1a1512] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -15,38 +44,48 @@ export function HeroSection() {
           className="object-cover opacity-90"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40" />
       </div>
 
       {/* Main Content Wrapper - Aligned with Header */}
       <div className="absolute inset-0 z-20 flex flex-col justify-end pb-[80px] pointer-events-none">
         <div className="max-w-[1600px] w-full mx-auto px-4 lg:px-8 h-full flex flex-col justify-end relative">
-
           {/* Middle Row: Welcome Text & Happy Client */}
-          <div className="flex flex-col md:flex-row items-end justify-between w-full mb-8 pointer-events-auto">
-            {/* Left: Welcome Text */}
-            <div className="max-w-lg space-y-2 text-white/80 text-[15px] md:text-md font-medium tracking-[0.2em] leading-relaxed uppercase" style={{ fontFamily: "var(--font-sans)" }}>
-              <p>Welcome to your personal escape</p>
-              <p>A serene space for deep rest and renewal.</p>
-              <p>Your weekly ritual to unwind the body and calm the mind.</p>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col items-center justify-center w-full mb-12 pointer-events-auto text-center h-full pb-20"
+          >
+            {/* Center: Welcome Text */}
+            <div className="w-full max-w-6xl mx-auto">
+              <motion.h1
+                variants={itemVariants}
+                className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white leading-[1.1] mb-8 drop-shadow-lg"
+              >
+                Immerse yourself in a world<br />
+                <span className="italic"> of personal escape.</span>
+              </motion.h1>
+              <motion.div
+                variants={itemVariants}
+                className="max-w-xl mx-auto space-y-3 text-white/90 text-lg font-light tracking-wide leading-relaxed drops-shadow-md"
+                style={{ fontFamily: "var(--font-sans)" }}
+              >
+                <p>A serene space for deep rest and renewal.</p>
+                <p>Your weekly ritual to unwind the body and calm the mind.</p>
+              </motion.div>
             </div>
-          </div>
-
-          {/* Massive Typography 
-          <div className="w-full pointer-events-auto">
-            <h1
-              className="text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-[9vw] leading-[0.85] sm:leading-[0.8] font-serif text-white whitespace-nowrap opacity-90 text-left -ml-[0.09em]"
-              style={{ letterSpacing: "-0.02em" }}
-            >
-              GOLDEN MOMENTS.
-            </h1>
-          </div> */}
-
+          </motion.div>
         </div>
       </div>
 
       {/* Footer Marquee */}
-      <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-[#F5F5F0] z-30 flex items-center overflow-hidden border-t border-[#E6CBA8]/20">
+      <motion.div
+        variants={marqueeVariants}
+        initial="hidden"
+        animate="visible"
+        className="absolute bottom-0 left-0 right-0 h-[60px] bg-[#F5F5F0] z-30 flex items-center overflow-hidden border-t border-[#E6CBA8]/20"
+      >
         <div className="animate-scroll flex whitespace-nowrap min-w-full">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="flex items-center mx-8">
@@ -65,7 +104,7 @@ export function HeroSection() {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       <style jsx>{`
         @keyframes scroll {
