@@ -32,6 +32,7 @@ export function AboutSection() {
                 alt="Spa towels and flowers"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 70vw, 25vw"
               />
             </motion.div>
 
@@ -55,6 +56,7 @@ export function AboutSection() {
                 alt="Essential oils"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 60vw, 20vw"
               />
             </motion.div>
           </div>
