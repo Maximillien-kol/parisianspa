@@ -44,6 +44,7 @@ export function Navigation() {
               height={50}
               className="h-8 sm:h-10 w-auto transition-opacity duration-300"
               priority
+              sizes="(max-width: 640px) 120px, 200px"
             />
           </Link>
 
@@ -86,9 +87,9 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className={`lg:hidden mt-4 p-6 rounded-2xl backdrop-blur-xl transition-colors duration-300 shadow-lg max-h-[80vh] overflow-y-auto ${isSolid
-            ? "bg-white border border-black/10"
-            : "bg-black/95 border border-white"
+          <div className={`lg:hidden absolute top-full left-0 right-0 h-auto max-h-[85vh] p-6 backdrop-blur-xl transition-colors duration-300 shadow-lg overflow-y-auto pb-10 border-t ${isSolid
+            ? "bg-white border-black/10"
+            : "bg-black/95 border-white/10"
             }`}>
             <div className="flex flex-col gap-6">
               {["About Us", "Our Services", "Treatments", "Gallery"].map((item) => (
@@ -105,9 +106,9 @@ export function Navigation() {
               <Link
                 href="#booking"
                 onClick={() => setIsOpen(false)}
-                className={`inline-block w-full text-center border px-8 py-3 transition-colors duration-300 text-sm ${isSolid
-                  ? "border-black text-black hover:bg-black hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-black"
+                className={`inline-block w-full text-center px-8 py-3 transition-colors duration-300 text-sm font-medium tracking-wide ${isSolid
+                  ? "text-black hover:bg-black/5"
+                  : "text-white hover:bg-white/10"
                   }`}
               >
                 BOOK AN APPOINTMENT
